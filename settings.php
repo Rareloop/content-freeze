@@ -22,6 +22,10 @@ class Content_Freeze_Settings {
 		$this->settings_field = 'content_freeze_options';
 		$this->options = get_option($this->settings_field);
 
+        if ($this->options === false) {
+            $this->options = [];
+        }
+
 		if (is_admin()) {
 			add_action('admin_init', array($this,'admin_init'), 20);
 			add_action('admin_menu', array($this, 'admin_menu'), 20);
@@ -117,6 +121,10 @@ class Content_Freeze_Settings {
 	}
 
 	protected function get_field_value($key) {
+
+        if (!array_key_exists($key, $this->options)) {
+            return null;
+        }
 
 		return $this->options[$key];
 	}

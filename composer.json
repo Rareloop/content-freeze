@@ -1,0 +1,5 @@
+{
+  "name": "wholegraindigital/content-freeze",
+  "type": "wordpress-plugin",
+  "description": "The content freeze plugin allows an admin to lock the site to prevent the anything being edited. Users can still visit the site, but no one can make changes behind the scenes without your permission."
+}
